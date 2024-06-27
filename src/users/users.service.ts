@@ -8,7 +8,7 @@ export class UsersService {
   constructor(@InjectRepository(User) private repo: Repository<User>) {}
 
   create(email: string, password: string) {
-    const user = this.repo.create({ email, password });
+    const user = this.repo.create({ email, password }); 
 
     return this.repo.save(user);
   }
@@ -27,6 +27,9 @@ export class UsersService {
       throw new Error('user not found');
     }
     Object.assign(user, attrs);
+    
+    console.log(attrs)
+    console.log(user)
     return this.repo.save(user);
   }
 
