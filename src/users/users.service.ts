@@ -30,9 +30,9 @@ export class UsersService {
       throw new Error('user not found');
     }
     Object.assign(user, attrs);
-    
-    console.log(attrs)
-    console.log(user)
+
+    console.log(attrs);
+    console.log(user);
     return this.repo.save(user);
   }
 
