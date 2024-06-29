@@ -16,6 +16,9 @@ Content-Type: application/json
   "email":"joan@gmail.com",
   "password":"1234"
 }
+### signout
+POST http://localhost:3000/auth/signout
+
 
 ### Find user with id 
 
