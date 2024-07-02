@@ -10,4 +10,3 @@ import { Report } from './report.entity';
   providers: [ReportsService]
 })
 export class ReportsModule {}
- 
