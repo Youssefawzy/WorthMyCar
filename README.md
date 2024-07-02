@@ -1,73 +1,50 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<h1 align="center">
+<img src="https://github.com/Youssefawzy/worth-my-car/assets/116081592/1098f638-afd5-437c-aabf-760ddbb60701" alt="rBay" width="200">
+<h1 align="center" >WorthMyCar</h1>
+</h1>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# Description
 
-## Description
+<h2 align="center">
+    An application allows users to estimate their car's value bases on reports submitted by other users who have sold similar vehicles.
+</h2>
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+# key-features
+<h3>Authentication</h3> 
+Users can Sign Up , Log in and Log Out
 
-## Installation
+<h3>Authorizatio</h3> 
+Admins only can approve and disapprove users reports
 
-```bash
-$ npm install
-```
+<h3>Creating Reports</h3> 
+Users can Create detailed car sale report with thier car's model, year, location (longitude and latitude), and sale price to contribute valuable data for accurate valuations.
 
-## Running the app
+<h3>Estimate Car Worth</h3> 
+Users can estimate their car's worth by inputting detailed information such as make, model, year, mileage, condition, and any additional relevant details. This data is then compared with existing reports in our database to provide a reliable valuation 
 
-```bash
-# development
-$ npm run start
 
-# watch mode
-$ npm run start:dev
+ ## API
+ Method   | URL                                      | Description                              |
+| -------- | ---------------------------------------- | ---------------------------------------- |
+| `POST`   | `/auth/signup`                           | Signing up with valid email and password |
+| `POST`   | `/auth/signin`                           | Signing in with valid email and password |
+| `POST`   | `/auth/signout`                          | signing out                              |
+| `GET`    | `/auth/:id`                              | Find user with id                        |
+| `GET`    | `/auth?email=example@gamil.com`          | Find user with email                     |
+| `GET`    | `/auth/whoami`                           | Get the curretn user information         |
+| `PATCH`  | `auth/:id`                               | Update user infromation                  |
+| `DELETE` | `/auth/:id`                              | Delete user with id                      |
+| `POST`   | `/reports`                               | Create a new report                      |
+| `PATCH`  | `/reports/:id`                           | approve an existing report               |
+| `GET`    | `/reports?`                              | Get an estimate for a car                |
 
-# production mode
-$ npm run start:prod
-```
 
-## Test
+## Build With 🏗️
+- Nestjs
+- TypeScript
+- TypeOrm
+- SQLite
+- jest
+  
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
