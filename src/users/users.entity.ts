@@ -5,7 +5,7 @@ import {
   OneToMany,
   AfterInsert,
   AfterRemove,
-  AfterUpdate
+  AfterUpdate,
 } from 'typeorm';
 
 import { Report } from 'src/reports/report.entity';
@@ -21,13 +21,16 @@ export class User {
   @Column()
   password: string;
 
+  @Column({ default: true })
+  admin: boolean;
+
   @AfterInsert()
   logInsert() {
     console.log('Inserted User with id', this.id);
   }
 
-  @OneToMany(()=> Report, (report)=> report.user)
-  reports:Report[]
+  @OneToMany(() => Report, (report) => report.user)
+  reports: Report[];
 
   @AfterUpdate()
   logUpdate() {
